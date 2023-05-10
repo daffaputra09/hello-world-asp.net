@@ -1,0 +1,62 @@
+﻿@page
+@model HelloWorld.Pages.Movies.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+    <div id="carouselExampleInterval" class=" carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/civilwar2.png" class="d-block img-fluid " alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/black-panther2.png" class="d-block img-fluid" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/TheHobbit2.png" class="d-block img-fluid" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/stillwater2.png" class="d-block img-fluid" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/john-wick2.png" class="d-block img-fluid" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/brave2.png" class="d-block img-fluid " alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+<div class="container-fluid  mt-5">
+    <div class="container-sm ">
+        <h2 class="text-center">Film Rekomendasi</h2>
+        <div class="row row-cols-4  g-4 mt-5">
+            @foreach (var item in Model.Movie){
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                        <br />
+                            <p class="card-text">Genre: @Html.DisplayFor(modelItem => item.Genre)</p>
+                            <p class="card-text">Price: @Html.DisplayFor(modelItem => item.Price)</p>
+                            <p class="card-text">Release Date: @Html.DisplayFor(modelItem => item.ReleaseDate)</p>
+                            <a class="card-link" asp-page="Movies/Details" asp-route-id="@item.Id">Details</a>
+                    </div>
+                </div>
+            </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+
