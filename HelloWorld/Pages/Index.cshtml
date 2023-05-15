@@ -5,58 +5,65 @@
 }
 
 
-    <div id="carouselExampleInterval" class=" carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="5000">
-                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/civilwar2.png" class="d-block img-fluid " alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/black-panther2.png" class="d-block img-fluid" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/TheHobbit2.png" class="d-block img-fluid" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/stillwater2.png" class="d-block img-fluid" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/john-wick2.png" class="d-block img-fluid" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-            <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/brave2.png" class="d-block img-fluid " alt="...">
-            </div>
+<div id="animation-carousel" class="relative w-full -mt-7" data-carousel="static">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden h-screen">
+        <!-- Item 1 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/civilwar2.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-<div class="container-fluid  mt-5">
-    <div class="container-sm ">
-        <h2 class="text-center">Film Rekomendasi</h2>
-        <div class="row row-cols-4  g-4 mt-5">
-            @foreach (var item in Model.Movie){
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
-                        <br />
-                            <p class="card-text">Genre: @Html.DisplayFor(modelItem => item.Genre)</p>
-                            <p class="card-text">Price: @Html.DisplayFor(modelItem => item.Price)</p>
-                            <p class="card-text">Release Date: @Html.DisplayFor(modelItem => item.ReleaseDate)</p>
-                            <a class="card-link" asp-page="Movies/Details" asp-route-id="@item.Id">Details</a>
-                    </div>
-                </div>
-            </div>
-            }
-
-
+        <!-- Item 2 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/black-panther2.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/TheHobbit2.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/stillwater2.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/john-wick2.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img src="https://raw.githubusercontent.com/daffaputra09/assets/main/brave2.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
     </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
 </div>
+
+<h2></h2>
+<div class="w-[80%] mx-auto grid grid-cols-2 md:grid-cols-3 gap-9">
+     @foreach (var item in Model.Movie){
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a asp-page="Movies/Details" asp-route-id="@item.Id">
+                <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">@Html.DisplayFor(modelItem => item.Title)</h5>
+        </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Genre: @Html.DisplayFor(modelItem => item.Genre)</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Price: @Html.DisplayFor(modelItem => item.Price)</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">ReleaseDate: @Html.DisplayFor(modelItem => item.ReleaseDate)</p>
+            <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" asp-page="Movies/Details" asp-route-id="@item.Id">
+                Details
+            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </a>
+    </div>
+    }
+    
+</div>
+
 
